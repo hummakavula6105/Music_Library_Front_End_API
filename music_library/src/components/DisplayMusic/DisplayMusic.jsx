@@ -1,5 +1,6 @@
 import Song from "../Songs/Song";
 import React from "react";
+import ImagePresenter from "./ImagePresenter";
 
 const DisplayMusic = (props) => {
   return (
@@ -8,6 +9,11 @@ const DisplayMusic = (props) => {
         {props.parentEntries.map((entry) => {
           return <Song entry={entry} key = {entry.id} />;
         })}
+      </div>
+      <div>
+        <image className="Main Page Display">
+            <ImagePresenter image={music-library-neon.jpg} altText="Main Page Image"/>
+        </image>
       </div>
     </div>
   );
