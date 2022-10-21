@@ -1,4 +1,10 @@
 import React, { useState } from 'react';
+import './ButtonHandler'
+import './CreateSong.css';
+import ImagePresenter from '../DisplayMusic/ImagePresenter';
+import musicLibraryNeon from "../../assets/music-library-neon.jpg";
+import ButtonHandler from './ButtonHandler';
+import Calendar from './Calendar';
 
 const AddSong = (props) => {
 
@@ -15,7 +21,7 @@ const AddSong = (props) => {
             artist: artist,
             album: album,
             releaseDate: releaseDate,
-            genre: genre
+            genre: genre,
             id: Math.random()
         };
         console.log(newSong);
@@ -23,41 +29,41 @@ const AddSong = (props) => {
     }
 
     return (
-        <div className='container'>
-            <div className='row'>
-                <div className='col-md-4'></div>
-                <div className='col-md-4'>
+        <body>
+            <image className="image">
+                <ImagePresenter image={musicLibraryNeon} altText="Main Page Image"/>
+            </image>
             <form onSubmit={handleSubmit} className='form-grid'>
-        <div className='form-group'>
-            <label>Title</label>
-            <input type='text' className='form-control' value={title} onChange={(event) => setTitle((event.target.value))} />
-        </div>
-        <div className='form-group'>
-            <label>Artist</label>
-            <input type='text' className='form-control' value={artist} onChange={(event) => setArtist(event.target.value)}/>
-        </div>
-        <div className='form-group'>
-            <label>Album</label>
-            <input type='text' className='form-control' value={album} onChange={(event) => setAlbum(event.target.value)}/>
-        </div>
-        <div className='form-group'>
-            <label>Release Date</label>
-            <input type='text' className='form-control' value={release_date} onChange={(event) => setReleaseDate(event.target.value)}/>
-        </div>
-        <div className='form-group'>
-            <label>Genre</label>
-            <input type='text' className='form-control' value={genre} onChange={(event) => setGenre(event.target.value)}/>
-        </div>
-        <div>
-            <button type='submit' className='btn btn-primary' style={{'margin-top': '1em'}}>Submit</button>
-        <div>
-        </div>
-        </div>
-                </form>
-                </div>
-            <div className='col-md-4'></div>
-            </div>
-        </div>
+                <section class='main section'>
+                    <div>
+                        <label>Title</label>
+                        <input type='text' value={title} onChange={(event) => setTitle((event.target.value))} />
+                    </div>
+                    <div>
+                        <label>Artist</label>
+                        <input type='text' value={artist} onChange={(event) => setArtist(event.target.value)}/>
+                    </div>
+                    <div>
+                        <label>Album</label>
+                        <input type='text' value={album} onChange={(event) => setAlbum(event.target.value)}/>
+                    </div>
+                    <div>
+                        <label>Release Date</label>
+                        <input type='text' value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)}/>
+                        <Calendar/>
+                    </div>
+                    <div>
+                        <label>Genre</label>
+                        <input type='text' value={genre} onChange={(event) => setGenre(event.target.value)}/>
+                    </div>
+                    <div>
+                        <ButtonHandler type='submit' className='btn btn-primary' style={{marginTop: '1em'}}>Submit</ButtonHandler>
+                    <div>
+                    </div>
+                    </div>
+                </section>
+            </form>
+        </body>
     )
 }
 

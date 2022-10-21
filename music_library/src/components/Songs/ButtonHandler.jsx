@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Button from './Button';
+
 
 const ButtonHandler = (props) => {
     const [buttonClass, setButtonClass] = useState("inactive");
 
-    function handleClick(){
+    function handleClick() {
         if(buttonClass === "inactive"){
             setButtonClass("active");
         }
@@ -14,7 +16,7 @@ const ButtonHandler = (props) => {
     }
     return ( 
         <div>
-            <Button handleClick= {handleClick} activeLike={activeLike} buttonClass={buttonClass}/>
+            <Button handleClick= {handleClick} buttonClass={buttonClass}/>
         </div>
      );
 }

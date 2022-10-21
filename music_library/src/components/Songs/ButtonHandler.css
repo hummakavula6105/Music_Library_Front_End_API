@@ -1,6 +1,6 @@
 button {
     color: gold;
-    padding: 15px 32px;
+    padding: 5px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -14,9 +14,4 @@ button:hover {
 
 .active{
     background-color:darkorange;
-}
-
-img{
-    width: 25px;
-    height: 25px;
 }
