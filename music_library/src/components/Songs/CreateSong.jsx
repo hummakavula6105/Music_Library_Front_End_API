@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './ButtonHandler'
-import './Index.css';
 import ImagePresenter from '../DisplayMusic/ImagePresenter';
 import musicLibraryNeon from "../../assets/music-library-neon.jpg";
 import ButtonHandler from './ButtonHandler';
