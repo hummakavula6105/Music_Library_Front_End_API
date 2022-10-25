@@ -1,27 +1,17 @@
-import React, {useState} from 'react';
-import Song from '../Songs/Song';
+import React from 'react';
 
-const SearchBar = (props) => {
-
-    const [query, setQuery] = useState('');
-
-    function handleSubmit(event) {
-        event.preventDefault()
-        let query = {
-            Song,
-        };
-        console.log(query);
-        props.search(query)
-    }
+const SearchBar = ({query, setQuery}) => {
 
     return (
-        <div onSubmit={handleSubmit} className = 'form-grid'>
-            <input
-                type = 'text'
-                value={query}
-                placeholder='Search'
-                onChange={event => setQuery(event.target.value)} />
-        </div>
+        <form className = 'form-grid'>
+            <div>
+                <input
+                    type = 'text'
+                    value={query}
+                    placeholder='Search'
+                    onChange={event => setQuery(event.target.value)} />
+            </div>
+        </form>
     );
 };
 

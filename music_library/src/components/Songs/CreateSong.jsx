@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import './ButtonHandler'
-import './CreateSong.css';
+import './Index.css';
 import ImagePresenter from '../DisplayMusic/ImagePresenter';
 import musicLibraryNeon from "../../assets/music-library-neon.jpg";
 import ButtonHandler from './ButtonHandler';
-import Calendar from './Calendar';
 
-const AddSong = (props) => {
+const AddSong = ({addNewSong}) => {
 
     const [title, setTitle] = useState('');
     const [artist, setArtist] = useState('');
@@ -20,12 +19,11 @@ const AddSong = (props) => {
             title: title,
             artist: artist,
             album: album,
-            releaseDate: releaseDate,
+            release_date: releaseDate,
             genre: genre,
-            id: Math.random()
         };
         console.log(newSong);
-        props.addNewSong(newSong)
+        addNewSong(newSong)
     }
 
     return (
@@ -49,8 +47,7 @@ const AddSong = (props) => {
                     </div>
                     <div>
                         <label>Release Date</label>
-                        <input type='text' value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)}/>
-                        <Calendar/>
+                        <input type='date' value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)}/>
                     </div>
                     <div>
                         <label>Genre</label>

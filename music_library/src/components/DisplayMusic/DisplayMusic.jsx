@@ -5,7 +5,13 @@ const DisplayMusic = (props) => {
   return (
     <div className="table">
       <div>
-        {props.parentEntries.map((entry) => {
+        {props.parentEntries.filter(entry=>
+         entry.title.includes(props.entry) || 
+         entry.album.includes(props.entry) || 
+         entry.artist.includes(props.entry) || 
+         entry.genre.includes(props.entry) || 
+         entry.release_date.includes(props.entry))
+         .map((entry) => {
           return <Song entry={entry} key = {entry.id} />;
         })}
       </div>

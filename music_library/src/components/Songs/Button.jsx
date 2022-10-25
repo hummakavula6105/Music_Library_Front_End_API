@@ -1,5 +1,5 @@
 import React from 'react';
-import './ButtonHandler.css';
+import './Index.css';
 
 const Button = ({handleClick, buttonClass}) => {
 
